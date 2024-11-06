@@ -1,134 +1,113 @@
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4>Plataforma de Envíos Masivos de Correos Electrónicos y SMS</h4>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Envíos Masivos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Plataforma de Envíos Masivos de Correos Electrónicos y SMS</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>Bienvenido a nuestra plataforma robusta para el despacho de correos electrónicos y SMS de manera masiva en campañas de marketing. Asegúrate de cumplir con las regulaciones del Sernac y nuestros horarios de envío (08:00 - 22:00).</p>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p>Bienvenido a nuestra plataforma robusta para el despacho de correos electrónicos y SMS de manera masiva en campañas de marketing. Asegúrate de cumplir con las regulaciones del Sernac y nuestros horarios de envío (08:00 - 22:00).</p>
-                </div>
-            </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h5>Enviar Campaña</h5>
-                </div>
-                <div class="card-body">
-                    <form id="formEnviarCampaña">
-                        <div class="form-group">
-                            <label for="asunto">Asunto de la campaña</label>
-                            <input type="text" class="form-control" id="asunto" placeholder="Asunto de la campaña">
-                        </div>
-                        <div class="form-group">
-                            <label for="mensaje">Mensaje</label>
-                            <textarea class="form-control" id="mensaje" rows="3" placeholder="Contenido del mensaje"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="tipoEnvio">Tipo de Envío</label>
-                            <select class="form-control" id="tipoEnvio">
-                                <option value="correo">Correo Electrónico</option>
-                                <option value="sms">SMS</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="horaEnvio">Hora de Envío</label>
-                            <input type="time" class="form-control" id="horaEnvio">
-                            <small class="form-text text-muted">Recuerda que el horario de envío permitido es de 08:00 a 22:00.</small>
-                        </div>
-                        <button type="submit" class="btn btn-custom">Enviar Campaña</button>
-                    </form>
-                </div>
-            </div>
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h5>Enviar Campaña</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="formEnviarCampaña">
+                            <div class="form-group">
+                                <label for="destinatarioTelefono">Número de Teléfono</label>
+                                <input type="text" class="form-control" id="destinatarioTelefono" placeholder="Número de Teléfono" required>
+                                <small class="form-text text-muted">Formato: +569XXXXXXXX</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="destinatarioCorreo">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="destinatarioCorreo" placeholder="Correo Electrónico" required>
+                                <small class="form-text text-muted">Ejemplo: correo&#64;dominio.com</small>
+                            </div>
+                            
 
-            <div class="card mt-4">
-                <div class="card-header">
-                    <h5>Estadísticas de Envíos</h5>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Campaña</th>
-                                    <th>Enviados</th>
-                                    <th>No Enviados</th>
-                                    <th>Rebotes</th>
-                                    <th>Errores</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Campaña 1</td>
-                                    <td>1,200</td>
-                                    <td>30</td>
-                                    <td>10</td>
-                                    <td>5</td>
-                                </tr>
-                                <tr>
-                                    <td>Campaña 2</td>
-                                    <td>800</td>
-                                    <td>25</td>
-                                    <td>8</td>
-                                    <td>3</td>
-                                </tr>
-                                <tr>
-                                    <td>Campaña 3</td>
-                                    <td>1,500</td>
-                                    <td>40</td>
-                                    <td>15</td>
-                                    <td>7</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                            <div class="form-group">
+                                <label for="asunto">Asunto de la campaña</label>
+                                <input type="text" class="form-control" id="asunto" placeholder="Asunto de la campaña" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mensaje">Mensaje</label>
+                                <textarea class="form-control" id="mensaje" rows="3" placeholder="Contenido del mensaje" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="horaEnvio">Hora de Envío</label>
+                                <input type="time" class="form-control" id="horaEnvio" required>
+                                <small class="form-text text-muted">Recuerda que el horario de envío permitido es de 08:00 a 22:00</small>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Enviar Campaña</button>
+                        </form>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-</div>
-<script>
-    document.getElementById("formEnviarCampaña").addEventListener("submit", function(event) {
-    event.preventDefault(); 
 
-    const asunto = document.getElementById("asunto").value;
-    const mensaje = document.getElementById("mensaje").value;
-    const tipoEnvio = document.getElementById("tipoEnvio").value;
-    const horaEnvio = document.getElementById("horaEnvio").value;
-
-    if (!asunto || !mensaje || !horaEnvio) {
-        alert("Por favor, completa todos los campos.");
-        return;
-    }
-
-    const data = {
-        asunto: asunto,
-        mensaje: mensaje,
-        tipoEnvio: tipoEnvio,
-        horaEnvio: horaEnvio
-    };
-
-    const apiUrl = "https://api.ejemplo.com/enviar-campaña";
-
-    fetch(apiUrl, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json" 
-        },
-        body: JSON.stringify(data) 
-    })
-    .then(response => response.json()) 
-    .then(data => {
-        if (data.success) {
-            alert("Campaña enviada correctamente");
-            document.getElementById("formEnviarCampaña").reset();
-        } else {
-            alert("Hubo un error al enviar la campaña: " + data.message);
-        }
-    })
-    .catch(error => {
-        alert("Error en la solicitud: " + error.message);
-    });
-});
-</script>
+    <script>
+        const form = document.getElementById('formEnviarCampaña');
+    
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+    
+            // Recoger los valores del formulario
+            const telefono = document.getElementById('destinatarioTelefono').value;
+            const correo = document.getElementById('destinatarioCorreo').value;
+            const asunto = document.getElementById('asunto').value;
+            const mensaje = document.getElementById('mensaje').value;
+            const horaEnvio = document.getElementById('horaEnvio').value;
+    
+            console.log("Formulario enviado. Datos recogidos:");
+            console.log("Teléfono: ", telefono);
+            console.log("Correo: ", correo);
+            console.log("Asunto: ", asunto);
+            console.log("Mensaje: ", mensaje);
+            console.log("Hora de Envío: ", horaEnvio);
+    
+            // Validar la hora de envío
+            const hora = parseInt(horaEnvio.split(":")[0], 10);
+            if (hora < 8 || hora >= 22) {
+                alert("La hora de envío debe estar entre las 08:00 y las 22:00.");
+                console.log("Hora no válida: " + horaEnvio);
+                return;
+            }
+    
+            console.log("Hora válida: ", horaEnvio);
+    
+            // Llamada a la API para enviar correo
+            console.log("Enviando solicitud al servidor...");
+            fetch('http://localhost:3000/api/enviar-correo', {
+                method: 'GET', // Método GET para probar el envío de correo
+            })
+            .then(response => {
+                console.log("Respuesta del servidor recibida.");
+                return response.text();  // Convertir la respuesta a texto
+            })
+            .then(data => {
+                console.log("Respuesta del servidor: ", data);
+                alert("Correo enviado correctamente.");
+                form.reset();
+            })
+            .catch(error => {
+                console.error("Error al enviar correo: ", error);
+                alert("Error al enviar correo. Revisa la consola para más detalles.");
+            });
+        });
+    </script>
+</body>
+</html>

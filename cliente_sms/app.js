@@ -148,7 +148,7 @@ app.get('/api/prueba-sms', (req, res) => {
 });
 
 app.get('/api/enviar-correo', (req, res) => {
-    const destinatario = 'nicolascarmonarioseco@gmail.com'; // Cambia esto por el email del destinatario
+    const destinatario = 'nicolascarmonarioseco@gmail.com';
     const asunto = 'Asunto del correo';
     const texto = 'Este es el contenido del correo.';
 
